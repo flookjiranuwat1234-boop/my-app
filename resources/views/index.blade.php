@@ -8,7 +8,7 @@
         dicta
         earum totam aliquam id, corrupti consectetur delectus corporis sapiente minus. Amet optio inventore ipsa ut!
     </p>
-    <a href="/abouts">About</a>
-    <a href="/blogs">blog</a>
+    <a href="/about2">About</a>
+    <a href="/blog2">blog</a>
 
 @endsection

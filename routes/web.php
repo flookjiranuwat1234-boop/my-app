@@ -1,35 +1,25 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
+
 
 Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/abouts', function () {
-    $name = "Jiranuwat Krasaeain";
-    $date = "6 กรกฏาคม 2026";
-    return view('abouts', compact('name', 'date'));
-})->name('abouts');
+Route::get('/about', function () {
+    return view('about');
+});
 
-Route::get('/blogs', function () {
-    $blogs = [
-        [
-            'title' => 'บทความที่ 1',
-            'content' => 'เนื้อหาบทที่ 1',
-            'status' => true
-        ],
-        [
-            'title' => 'บทความที่ 2',
-            'content' => 'เนื้อหาบทที่ 2',
-            'status' => true
-        ],
-        [
-            'title' => 'บทความที่ 3',
-            'content' => 'เนื้อหาบทที่ 3',
-            'status' => false
-        ]
-    ];
-    return view('blogs', compact('blogs'));
-})->name('blogs');
+Route::get('/blog', function () {
+    return view('blog');
+});
 
+Route::get('/about2', [AdminController::class, 'about2'])->name('about2');
+Route::get('/blog2', [AdminController::class, 'blog2'])->name('blog2');
+Route::get('/create', [AdminController::class, 'create'])->name('create');
+
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
